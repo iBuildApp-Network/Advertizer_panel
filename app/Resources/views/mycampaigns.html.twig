@@ -1,0 +1,39 @@
+{% extends "::base.html.twig" %}
+{% block title %}Your Ad Campaigns{% endblock %}
+{% block body %}
+    
+{% include "topnav.html.twig" %}
+
+<div class="content-wrapper" style="margin-top: 80px;">
+    <div class="container" style="">
+        <div style="margin-bottom: 30px;">
+            <h2 style="color: grey;">My Campaigns</h2>
+        </div>
+        {% for key in vcamp %}
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title" style="margin-bottom: 50px;">{{ key.name }}</h5>
+                  <div>
+                      <h6 style="display: inline !important;">Budget:</h6>
+                      <p style="display: inline !important;"> {{ key.budget }}</p>
+                  </div>    
+                  <div>
+                      <h6 style="display: inline !important;">Daily Budget:</h6>
+                      <p style="display: inline !important;"> {{ key.siteName }}</p>
+                  </div>
+                  <div>
+                      <h6 style="display: inline !important;">Site URL: </h6>
+                      <p style="display: inline !important;"> {{ key.siteUrl }}</p>
+                  </div>
+                  <a href="{{ path('adcampaign_edit', { 'id': key.id }) }}">Edit</a>
+                </div>
+            </div>
+        {% endfor %}   
+    </div>
+    <div align="center" class="container" style="max-height: 80px;margin-top: 30px;margin-bottom: 30px;">
+        <span><a type="button" class="btn btn-lg" href="{{ path('adcampaign_new')| trans }}" style="width: auto;background-color: #fff; color: grey; border-style: none;"><i class="fa fa-plus" aria-hidden="true" style="color: grey;"></i>  Create New Ad Campaign</a></span>  
+    </div>
+</div>
+{% include "footer.html.twig" %}
+{% endblock body %}
+

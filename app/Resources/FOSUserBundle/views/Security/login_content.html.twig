@@ -1,0 +1,104 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
+<!--<form action="{{ path("fos_user_security_check") }}" method="post">
+    {% if csrf_token %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% endif %}
+    
+    <label for="username">{{ 'security.login.username'|trans }}</label>
+    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
+
+    <label for="password">{{ 'security.login.password'|trans }}</label>
+    <input type="password" id="password" name="_password" required="required" autocomplete="current-password" />
+
+    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+    <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+
+    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+</form>-->
+
+    <div class="container">
+      <div class="row">
+        <div class="main">
+          <h3>Please Log In, or <a href="#">Sign Up</a></h3>
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <a href="#" class="btn btn-lg btn-primary btn-block">Facebook</a>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <a href="#" class="btn btn-lg btn-info btn-block">Google</a>
+                </div>
+            </div>
+            <div class="login-or">
+                <hr class="hr-or">
+                <span class="span-or">or</span>
+            </div>
+            <form action="{{ path('fos_user_security_check') }}" method="POST" class="fos_user_login">
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                <div class="form-group">
+                    <label for="inputUsernameEmail">Username or email</label>
+                    <input type="text" id="inputUsernameEmail" name="_username" value="{{ last_username }}" required="required" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <a class="pull-right" href="#">Forgot password?</a>
+                    <label for="inputPassword">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" name="_password" required="required" />
+                </div>
+                <div class="checkbox pull-right">
+                    <label><input type="checkbox"> Remember me </label>
+                </div>
+                <button type="submit" class="btn btn btn-primary">
+                    Log In
+                </button>
+            </form>
+
+        </div>
+
+      </div>
+    </div>
+
+{% block stylesheets %}
+    <style>
+         body {
+            padding-top: 15px;
+            font-size: 12px
+          }
+          .main {
+            max-width: 320px;
+            margin: 0 auto;
+          }
+          .login-or {
+            position: relative;
+            font-size: 18px;
+            color: #aaa;
+            margin-top: 10px;
+                    margin-bottom: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+          }
+          .span-or {
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: -2px;
+            margin-left: -25px;
+            background-color: #fff;
+            width: 50px;
+            text-align: center;
+          }
+          .hr-or {
+            background-color: #cdcdcd;
+            height: 1px;
+            margin-top: 0px !important;
+            margin-bottom: 0px !important;
+          }
+          h3 {
+            text-align: center;
+            line-height: 300%;
+          }
+    </style>
+{% endblock %}

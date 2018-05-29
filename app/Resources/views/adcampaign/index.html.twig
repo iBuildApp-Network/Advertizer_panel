@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Adcampaigns list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Start_date</th>
+                <th>End_date</th>
+                <th>Budget</th>
+                <th>Daily_budget</th>
+                <th>Site_name</th>
+                <th>Site_url</th>
+                <th>Country</th>
+                <th>Operating_system</th>
+                <th>Manufacturer</th>
+                <th>Category</th>
+                <th>Language</th>
+                <th>Bid</th>
+                <th>Ad_image</th>
+                <th>User</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for adCampaign in adCampaigns %}
+            <tr>
+                <td><a href="{{ path('adcampaign_show', { 'id': adCampaign.id }) }}">{{ adCampaign.id }}</a></td>
+                <td>{{ adCampaign.name }}</td>
+                <td>{% if adCampaign.startdate %}{{ adCampaign.startdate|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if adCampaign.enddate %}{{ adCampaign.enddate|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ adCampaign.budget }}</td>
+                <td>{{ adCampaign.dailybudget }}</td>
+                <td>{{ adCampaign.sitename }}</td>
+                <td>{{ adCampaign.siteurl }}</td>
+                <td>{{ adCampaign.country }}</td>
+                <td>{{ adCampaign.operatingsystem }}</td>
+                <td>{{ adCampaign.manufacturer }}</td>
+                <td>{{ adCampaign.category }}</td>
+                <td>{{ adCampaign.language }}</td>
+                <td>{{ adCampaign.bid }}</td>
+                <td>{{ adCampaign.adimage }}</td>
+                <td>{{ adCampaign.user }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('adcampaign_show', { 'id': adCampaign.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('adcampaign_edit', { 'id': adCampaign.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('adcampaign_new') }}">Create a new adCampaign</a>
+        </li>
+    </ul>
+{% endblock %}

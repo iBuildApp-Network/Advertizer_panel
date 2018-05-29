@@ -1,0 +1,47 @@
+<!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav" style="background: linear-gradient(-27deg, #27cadc, #7e33e6); margin-bottom: 80px;">
+   <a class="navbar-brand site-name" href="{{ path('mycampaigns') }}" ><img src="https://ibuildapp.io/images/logo.png" alt="logo" style="width: 60px;"></a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <li class="nav-item {{ app.request.get('_route') == 'mycampaigns' ? 'active' }}" data-toggle="tooltip" data-placement="right" style="padding-top: 20px;">
+          <a class="nav-link" href="{{ path('mycampaigns') }}">
+            <i class="fa fa-fw fa-clipboard"></i>
+            <span class="nav-link-text">My Campaigns</span>
+          </a>
+        </li>
+        <li class="nav-item {{ app.request.get('_route') == 'adcampaign_new' ? 'active' }}" data-toggle="tooltip" data-placement="right" style="padding-top: 20px;">
+          <a class="nav-link" href="{{ path('adcampaign_new') }}">
+            <i class="fa fa-fw fa-plus-circle"></i>
+            <span class="nav-link-text">New Ad Campaign</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">     
+          {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <a href="{{ path('fos_user_profile_show') }}" style="color: #fff; display:inline;">
+                {{ '%username%'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
+            </a>
+            <a class="nav-link" href="{{ path('fos_user_security_logout') }}" style="display:inline; color: #fff; ">
+                {{ ''|trans({}, 'FOSUserBundle') }}<i class="fa fa-fw fa-sign-out"></i>
+            </a>
+          {% else %}
+            <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+          {% endif %}
+        </li>
+      </ul>
+    </div>
+  </nav>
+ {% block javascripts %}
+            <script src="{{ asset('bundles/app/js/sb-admin.js') }}"></script>
+ {% endblock %}

@@ -1,0 +1,18 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="content-wrapper fos_user_user_show" style="margin-top: 100px; margin-left: 300px;">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title" style="margin-bottom: 50px;">Account settings</h5>
+        <div>
+            <h6 style="display: inline !important;">{{ 'Username'|trans }}:</h6>
+            <p style="display: inline !important;"> {{ user.username }}</p>
+        </div>    
+        <div>
+            <h6 style="display: inline !important;">{{ 'Email'|trans }}:</h6>
+            <p style="display: inline !important;"> {{ user.email }}</p>
+        </div>
+      </div>
+    </div>
+</div>
+{% include "footer.html.twig" %}

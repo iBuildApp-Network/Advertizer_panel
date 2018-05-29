@@ -1,0 +1,90 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% block fos_user_content %}
+    <!-- BEGIN REGISTRATION FORM -->
+<form action="{{ path("fos_user_registration_register") }}" method="post" class="form-signup">
+    <h2 class="form-signup-heading" >Please Sign Up</h2>
+    <div class="form-group">
+        {{ form_widget(form.username, { 'attr': {'class': 'form-control placeholder-no-fix', 'placeholder':'User Name'} }) }}
+        {% for errorItem in form.username.vars.errors %}
+        <span class="help-inline">{{ errorItem.message | trans}}</span>
+        {% endfor %}
+    </div>
+    <div class="form-group">
+        {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder':'E-mail'} }) }}
+        {% for errorItem in form.email.vars.errors %}
+        <span class="help-inline">{{ errorItem.message }}</span>
+        {% endfor %}
+    </div>
+    <div class="form-group">
+        {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control', 'placeholder':'Password'} }) }}
+        {% for errorItem in form.plainPassword.first.vars.errors %}
+        <span class="help-inline">{{ errorItem.message }}</span>
+        {% endfor %}
+    </div>
+    <div class="form-group">
+        {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control', 'placeholder':'Repeat Password'} }) }}
+        {% for errorItem in form.plainPassword.second.vars.errors %}
+        <span class="help-inline">{{ errorItem.message }}</span>
+        {% endfor %}
+    </div>
+    <input type="submit"
+               class="btn btn-lg btn-primary btn-block"
+               id="_submit"
+               name="_submit"
+               value="{{ 'Submit'|trans }}"/>
+    <h4>Already have an account? <a href="{{ path('fos_user_security_login') }}">Sign In</a></h4>
+    {{ form_rest(form) }}
+</form>
+<!-- END REGISTRATION FORM -->
+   
+{% endblock fos_user_content %}
+
+{% block stylesheets %}
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style>
+        body {
+          padding-top: 40px;
+          padding-bottom: 40px;
+          background-color: #eee;
+        }
+
+        .form-signup {
+          max-width: 330px;
+          padding: 15px;
+          margin: 0 auto;
+        }
+        .form-signup .form-signup-heading,
+        .form-signiup .checkbox {
+          margin-bottom: 10px;
+        }
+        .form-signup .checkbox {
+          font-weight: normal;
+        }
+        .form-signup .form-control {
+          position: relative;
+          height: auto;
+          -webkit-box-sizing: border-box;
+             -moz-box-sizing: border-box;
+                  box-sizing: border-box;
+          padding: 10px;
+          font-size: 16px;
+        }
+        .form-signup .form-control:focus {
+          z-index: 2;
+        }
+        .form-signup input[type="email"] {
+          margin-bottom: -1px;
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+        .form-signup input[type="password"] {
+          margin-bottom: 10px;
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+        }
+    </style>
+{% endblock %}

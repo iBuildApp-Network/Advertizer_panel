@@ -1,0 +1,226 @@
+{% form_theme campform 'bootstrap_4_layout.html.twig' %}
+
+<div class="content-wrapper" style="padding: 50px; padding-top: 80px;">
+    <div class="container">
+    {{ form_start(campform, {'method': 'POST'}) }}
+    <div class="stepwizard">
+        <div class="stepwizard-row setup-panel">
+            <div class="stepwizard-step"> 
+                <a href="#step-1" class="btn btn-success btn-circle" data-type="button">1</a>
+                <p><small>Basic Info</small></p>
+            </div>
+            <div class="stepwizard-step"> 
+                <a href="#step-2" class="btn btn-default btn-circle" data-disabled="disabled" data-type="button">2</a>
+                <p><small>Targeting</small></p>
+            </div>
+            <div class="stepwizard-step"> 
+                <a href="#step-3" class="btn btn-default btn-circle" data-disabled="disabled" data-type="button">3</a>
+                <p><small>Pricing</small></p>
+            </div>
+            <div class="stepwizard-step"> 
+                <a href="#step-4" class="btn btn-default btn-circle" data-disabled="disabled" data-type="button">4</a>
+                <p><small>Ads</small></p>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Basic Info Card -->
+    <div class="card setup-content" id="step-1">
+        <div class="card-header"><h4>Basic Info</h4></div>
+        <div class="card-body">
+            <div class="form-group">
+                    <div class="col-sm-9">
+                         {{ form_row(campform.name, { 'attr': {'class': 'form-control', 'placeholder':'Campaign name', 'required': 'true'} }) }}
+                    </div>
+                </div>
+                <div class="form-group" style="width: 500px !important;">
+                    <div class="col-sm-9 input-group date">
+                        {{ form_row(campform.start_date) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9 input-group">
+                        {{ form_row(campform.end_date) }}  
+                    </div>
+                </div>
+                <div class="form-group">
+                      <div class="col-sm-9">
+                        {{ form_row(campform.budget, { 'attr': {'class': 'form-control', 'placeholder':'IBA'} }) }}
+                      </div>
+                </div>
+                <div class="form-group">
+                      <div class="col-sm-9">
+                        {{ form_row(campform.daily_budget, { 'attr': {'class': 'form-control', 'placeholder':'IBA'} }) }}
+                      </div>
+                </div>
+                <div class="form-group">
+                    <span><i class="fa fa-globe" aria-hidden="true"></i><button type="button" class="btn btn-link" data-toggle="collapse" data-target="#hide-me">
+                           Add New Site
+                        </button></span><br><br>
+                    <div id="hide-me" class="collapse">
+                        <div class="form-group">
+                            <div class="col-sm-9">
+                                {{ form_row(campform.site_name, { 'attr': {'class': 'form-control', 'placeholder':'Name of your site'} }) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-9">
+                                {{ form_row(campform.site_url, { 'attr': {'class': 'form-control', 'placeholder':'https://...'} }) }}
+                            </div>
+                        </div>
+                    </div><br><br>
+                </div>  
+                <button class="btn nextBtn pull-right" type="button">Next</button>
+            </div>
+        </div>
+        
+        <!-- Targeting Card -->
+        <div class="card setup-content" id="step-2">
+            <div class="card-header"><h4>Targeting</h4></div>
+            <div class="card-body">
+                <div id="accordion" style="padding-bottom: 50px;">
+                    <div class="card">
+                      <div class="card-header" id="headingOne">
+                          <span><i class="fa fa-map-marker" aria-hidden="true"></i><button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            Geographic Targeting
+                        </button></span>
+                        
+                      </div>
+
+                      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            {{ form_label(campform.country, 'Choose Target Country') }}
+                            {{ form_row(campform.country, { 'attr': {'class': 'custom-select'}, 'label_attr': {'class': 'CUSTOM_LABEL_CLASS'} }) }}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header" id="headingTwo">
+                        <span><i class="fa fa-mobile" aria-hidden="true"></i><button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                            Device Targeting
+                        </button></span>
+                      </div>
+                      <div id="collapseTwo" class="collapse setup-radios" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
+                            <span>
+                            {{ form_label(campform.operating_system, 'Target By Operating System') }}
+                            <p style="font-size: 12px; color: graytext;">Specify the list of the operating systems to target</p>
+                            {{ form_row(campform.operating_system, { 'attr': {'class': 'select tag'}, 'label_attr': {'class': 'CUSTOM_LABEL_CLASS'} }) }}
+                            </span>
+                            <span>
+                            {{ form_label(campform.manufacturer, 'Target By Manufacturer') }}
+                            <p style="font-size: 12px; color: graytext;">Specify the list of the manufacturers to target</p>
+                            {{ form_row(campform.manufacturer, { 'attr': {'class': 'select tag'} }) }}
+                            </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header" id="headingThree">
+                        <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i><button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                            Other Targeting
+                        </button></span>
+                      </div>
+                      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body">
+                            <span>
+                            {{ form_label(campform.category, 'Content Categories') }}
+                            <p style="font-size: 12px; color: graytext;">  Define the content categories the publisher should provide to show this ad</p>
+                            {{ form_row(campform.category, { 'attr': {'class': 'select tag'}, 'label_attr': {'class': 'CUSTOM_LABEL_CLASS'} }) }}
+                            </span>
+                            <span>
+                            {{ form_label(campform.language, 'Language Targeting') }}&nbsp;&nbsp;
+                            <p style="font-size: 12px; color: graytext;">Specify the list of languages to target</p>
+                            {{ form_row(campform.language, { 'attr': {'class': 'select tag'} }) }}
+                            </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <button class="btn nextBtn pull-right" type="button">Next</button>
+            </div>
+        </div>
+        
+        <!-- Bid Card -->
+        <div class="card setup-content" id="step-3" >
+            <div class="card-header"><h4>Bid</h4></div>
+            <div class="card-body">
+                <p>The recommended bid is indicative of the demand for the targeting profile selected. It is advisable to enter a bid higher than the minimum bid to get a greater exposure. Expected clicks corresponding to your bid is shown below.</p>
+                <div class="table-responsive" style="padding-bottom: 50px;">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                          <tr>
+                            <th>Call to Action</th>
+                            <th>Minimum Bid (IBA)</th>
+                            <th>Enter Your Bid (IBA)</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>URL</td>
+                            <td>0,047</td>
+                            <td>
+                                <div class="form-group">
+                                    {{ form_row(campform.bid, { 'attr': {'class': 'form-control', 'placeholder':'0,047 IBA'} }) }}
+                                </div>
+                            </td>
+                          </tr>  
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn nextBtn pull-right" type="button">Next</button>
+            </div>
+        </div>
+        
+         <!-- Design Ad Card -->
+        <div class="card setup-content" id="step-4">
+            <div class="card-header"><h4>Design Your Ad</h4></div>
+            <div class="card-body">
+                <p>Important: Your ad image should fit the size 320x50</p>
+                
+                
+                        <div><img class="img-fluid" id="preview_img"></div>
+                        <button type="button" class="btn btn-add-photo" id="save_changes"><span id="upload-button-text">Upload Your Image</span> <i class="fa fa-file-photo-o fa-lg"></i></button>
+                        <input id="image_file" accept="image/png,image/jpeg" type="file" style="display:none;">
+                        <canvas style="display:none;" id="canvas"></canvas>
+                            
+                        {{ form_row(campform.ad_image) }}  
+                <div style="display:none;">{{ form_row(campform.submit, { 'attr': {'class': 'btn nextBtn pull-right'} }) }}</div>
+                <button type="button" id="fake_submit" class="btn nextBtn pull-right btn">Create Ad Campaign</button>
+            </div>
+        </div>
+            
+        <div class="modal fade" id="loadingModal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Loading...</h5>
+              </div>
+              <div class="modal-body">Please await while your photo is uploaded. It might take a few minutes on some mobile devices. Don't close the page.</div>
+              <div class="modal-footer">
+              </div>
+            </div>
+          </div>
+        </div>
+                
+        <div id="errorModal" class="modal fade" role="dialog" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+            <div class="modal-content">
+                    <div class="modal-header text-center">    
+                        <h5 class="modal-title">Error</h5>
+                        <button id="error-close" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>                        
+                    </div>
+                    <div id="error-text" class="modal-body"></div>
+                    <div class="modal-footer"></div>
+            </div>
+		</div>
+        </div>
+       
+{{ form_end(campform) }}
+
+    </div>
+</div>
+{% block javascripts %}
+
+{% endblock %}

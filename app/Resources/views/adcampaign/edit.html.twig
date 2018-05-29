@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+{% block title %}Edit Your Ad Campaign{% endblock %}
+{% block body %}
+{% include "topnav.html.twig" %}
+<div class="content-wrapper" style="margin-top: 80px;">
+    <div class="container" style="">
+        <div style="margin-bottom: 30px; display: inline;">
+            <h2 style="color: grey;">Edit Your Ad Campaign</h2>
+        </div>
+        {% form_theme edit_form 'bootstrap_4_layout.html.twig' %}
+
+        {{ form_start(edit_form) }}
+            <div class="col-sm-9">
+                 {{ form_row(edit_form.name, { 'attr': {'class': 'form-control', 'placeholder':'Campaign name'} }) }}
+            </div>
+            <div class="col-sm-9 input-group date">
+                {{ form_row(edit_form.start_date) }}
+            </div>
+            <div class="col-sm-9 input-group date">
+                {{ form_row(edit_form.end_date) }}  
+            </div>
+            <div class="col-sm-9">
+              {{ form_row(edit_form.budget, { 'attr': {'class': 'form-control', 'placeholder':'IBA'} }) }}
+            </div>
+            <div class="col-sm-9">
+              {{ form_row(edit_form.daily_budget, { 'attr': {'class': 'form-control', 'placeholder':'IBA'} }) }}
+            </div>
+            <div class="col-sm-9">
+                {{ form_row(edit_form.site_name, { 'attr': {'class': 'form-control', 'placeholder':'Name of your site'} }) }}
+            </div>
+            <div class="col-sm-9">
+                {{ form_row(edit_form.site_url, { 'attr': {'class': 'form-control', 'placeholder':'https://...'} }) }}
+            </div>
+            <div class="col-sm-9">
+                {{ form_label(edit_form.country, 'Choose Target Country') }}
+                {{ form_row(edit_form.country, { 'attr': {'class': 'custom-select'}, 'label_attr': {'class': 'CUSTOM_LABEL_CLASS'} }) }}
+            </div>
+            <div class="col-sm-9">
+                <span>
+                    {{ form_label(edit_form.operating_system, 'Target By Operating System') }}
+                    <p style="font-size: 12px; color: graytext;">Specify the list of the operating systems to target</p>
+                    {{ form_row(edit_form.operating_system, { 'attr': {'class': 'select tag'}, 'label_attr': {'class': 'CUSTOM_LABEL_CLASS'} }) }}
+                </span>
+            </div>
+            <div class="col-sm-9">
+                <span>
+                    {{ form_label(edit_form.manufacturer, 'Target By Manufacturer') }}
+                    <p style="font-size: 12px; color: graytext;">Specify the list of the manufacturers to target</p>
+                    {{ form_row(edit_form.manufacturer, { 'attr': {'class': 'select tag'} }) }}
+                </span>
+            </div>
+            <div class="col-sm-9">
+                <span>
+                    {{ form_label(edit_form.category, 'Content Categories') }}
+                    <p style="font-size: 12px; color: graytext;">  Define the content categories the publisher should provide to show this ad</p>
+                    {{ form_row(edit_form.category, { 'attr': {'class': 'select tag'}, 'label_attr': {'class': 'CUSTOM_LABEL_CLASS'} }) }}
+                </span>
+            </div>
+            <div class="col-sm-9">
+                <span>
+                    {{ form_label(edit_form.language, 'Language Targeting') }}&nbsp;&nbsp;
+                    <p style="font-size: 12px; color: graytext;">Specify the list of languages to target</p>
+                    {{ form_row(edit_form.language, { 'attr': {'class': 'select tag'} }) }}
+                </span>
+            </div>
+            <div class="col-sm-9">
+                 {{ form_row(edit_form.bid, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+            <div class="col-sm-9">
+                 {{ form_row(edit_form.ad_image, { 'attr': {'id': 'image_file'} }) }}
+            </div>
+            <div class="col-sm-9"><img class="img-fluid" id="preview_img" src="{{ adCampaign.adImage }}"></div>
+            <div class="col-sm-9"><button type="button" class="btn btn-add-photo" id="save_changes"><span id="upload-button-text">Upload Your Image</span> <i class="fa fa-file-photo-o fa-lg"></i></button>
+            <input id="image_file" accept="image/png,image/jpeg" type="file" style="display:none;"></div>
+            <canvas style="display:none;" id="canvas"></canvas>   
+                        {{ form_row(edit_form.ad_image) }} 
+            <div style="display: none;">
+                {{ form_row(edit_form.submit) }}
+            </div>
+            <div class="col-sm-9">
+                 <input class="btn nextBtn pull-right" type="submit" value="Edit" />
+            </div>
+            {{ form_end(edit_form) }}
+        
+            <div class="col-sm-9" style="display: inline;">
+              <span><i class="fa fa-angle-left" aria-hidden="true"></i>
+                  <a class="btn btn-link" href="{{ path('mycampaigns') }}">
+                       Back to my campaigns
+                  </a>
+              </span>     
+            </div>
+            <div class="col-sm-9" style="margin-top: 30px;">
+              {{ form_start(delete_form) }}
+                    <input class="btn nextBtn" type="submit" value="Delete" style="background-color: palevioletred;border-color: palevioletred;">
+              {{ form_end(delete_form) }}
+            </div>     
+    </div>
+</div>
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}             
+              
+{% endblock %}

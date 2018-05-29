@@ -1,0 +1,27 @@
+adcampaign_index:
+    path:     /mycampaigns
+    defaults: { _controller: "AppBundle:AdCampaign:index" }
+    methods:  GET
+
+adcampaign_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:AdCampaign:show" }
+    methods:  GET
+
+adcampaign_new:
+    path:     /newadcampaign
+    defaults: { _controller: "AppBundle:AdCampaign:new" }
+    methods:  [GET, POST]
+
+adcampaign_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:AdCampaign:edit" }
+    methods:  [GET, POST]
+
+
+adcampaign_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:AdCampaign:delete" }
+    methods:  GET
+
+

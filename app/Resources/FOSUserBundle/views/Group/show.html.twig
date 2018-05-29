@@ -1,0 +1,20 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% block fos_user_content %}
+{% include "@FOSUser/Group/show_content.html.twig" %}
+{% endblock fos_user_content %}
+
+{% block stylesheets %}
+    <style>
+        .content-wrapper {
+            margin-left: 300px !important;
+            margin-top: 300px !important;
+        }
+        
+        .content-wrapper p {
+          color: white;
+          margin-left: 300px !important;
+            margin-top: 300px !important;  
+        }
+    </style>
+{% endblock %}
