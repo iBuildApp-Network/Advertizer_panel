@@ -2,33 +2,40 @@
 {% block title %}Edit Your Ad Campaign{% endblock %}
 {% block body %}
 {% include "topnav.html.twig" %}
-<div class="content-wrapper" style="margin-top: 80px;">
+<div class="content-wrapper" style="padding: 50px; padding-top: 80px;">
     <div class="container" style="">
-        <div style="margin-bottom: 30px; display: inline;">
-            <h2 style="color: grey;">Edit Your Ad Campaign</h2>
+        <div class="col-sm-9" style="margin-bottom: 30px; display: inline;">
+            <h2 style="color: grey;margin-bottom: 30px;">Edit Your Ad Campaign</h2>
         </div>
         {% form_theme edit_form 'bootstrap_4_layout.html.twig' %}
 
         {{ form_start(edit_form) }}
             <div class="col-sm-9">
-                 {{ form_row(edit_form.name, { 'attr': {'class': 'form-control', 'placeholder':'Campaign name'} }) }}
+                {{ form_label(edit_form.name, 'Name of Your Campaign') }}
+                {{ form_row(edit_form.name, { 'attr': {'class': 'form-control', 'placeholder':'Campaign name'} }) }}
             </div>
-            <div class="col-sm-9 input-group date">
+            <div class="col-sm-9">
+                {{ form_label(edit_form.start_date, 'Start Date') }}
                 {{ form_row(edit_form.start_date) }}
             </div>
-            <div class="col-sm-9 input-group date">
+            <div class="col-sm-9">
+                {{ form_label(edit_form.end_date, 'End Date') }}
                 {{ form_row(edit_form.end_date) }}  
             </div>
             <div class="col-sm-9">
-              {{ form_row(edit_form.budget, { 'attr': {'class': 'form-control', 'placeholder':'IBA'} }) }}
+                {{ form_label(edit_form.budget, 'Budget for the Whole Period of Campaign') }}
+                {{ form_row(edit_form.budget, { 'attr': {'class': 'form-control', 'placeholder':'IBA'} }) }}
             </div>
             <div class="col-sm-9">
-              {{ form_row(edit_form.daily_budget, { 'attr': {'class': 'form-control', 'placeholder':'IBA'} }) }}
+                {{ form_label(edit_form.daily_budget, 'Max Budget for One Day of Campaign') }}
+                {{ form_row(edit_form.daily_budget, { 'attr': {'class': 'form-control', 'placeholder':'IBA'} }) }}
             </div>
             <div class="col-sm-9">
+                {{ form_label(edit_form.site_name, 'Website Name') }}
                 {{ form_row(edit_form.site_name, { 'attr': {'class': 'form-control', 'placeholder':'Name of your site'} }) }}
             </div>
             <div class="col-sm-9">
+                {{ form_label(edit_form.site_url, 'Website URL') }}
                 {{ form_row(edit_form.site_url, { 'attr': {'class': 'form-control', 'placeholder':'https://...'} }) }}
             </div>
             <div class="col-sm-9">
@@ -69,14 +76,17 @@
             <div class="col-sm-9">
                  {{ form_row(edit_form.ad_image, { 'attr': {'id': 'image_file'} }) }}
             </div>
-            <div class="col-sm-9"><img class="img-fluid" id="preview_img" src="{{ adCampaign.adImage }}"></div>
+            <div class="col-sm-9">
+                {{ form_label(edit_form.ad_image, 'Ad Image') }}
+            </div>
+            <div class="col-sm-9"><img class="img-fluid" id="preview_img" src="{{ adCampaign.adImage }}"></div><br>
             <div class="col-sm-9"><button type="button" class="btn btn-add-photo" id="save_changes"><span id="upload-button-text">Upload Your Image</span> <i class="fa fa-file-photo-o fa-lg"></i></button>
             <input id="image_file" accept="image/png,image/jpeg" type="file" style="display:none;"></div>
             <canvas style="display:none;" id="canvas"></canvas>   
                         {{ form_row(edit_form.ad_image) }} 
             <div style="display: none;">
                 {{ form_row(edit_form.submit) }}
-            </div>
+            </div><br><br>
             <div class="col-sm-9">
                  <input class="btn nextBtn pull-right" type="submit" value="Edit" />
             </div>

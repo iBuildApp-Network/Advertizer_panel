@@ -31,42 +31,64 @@
         <div class="card-body">
             <div class="form-group">
                     <div class="col-sm-9">
-                         {{ form_row(campform.name, { 'attr': {'class': 'form-control', 'placeholder':'Campaign name', 'required': 'true'} }) }}
-                    </div>
-                </div>
-                <div class="form-group" style="width: 500px !important;">
-                    <div class="col-sm-9 input-group date">
-                        {{ form_row(campform.start_date) }}
+                        {{ form_label(campform.name, 'Name of Your Campaign') }}
+                        {{ form_row(campform.name, { 'attr': {'class': 'form-control', 'placeholder':'Campaign name', 'required': 'true'} }) }}
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-sm-9 input-group">
-                        {{ form_row(campform.end_date) }}  
+                    <div class="col-sm-9">
+                        <span>
+                            {{ form_label(campform.start_date, 'Start Date') }}
+                            <h6 style="font-size: 12px; color: graytext;">Specify the day when your ad campaign will start</h6>
+                            {{ form_row(campform.start_date) }}
+                        </span>     
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <span>
+                            {{ form_label(campform.end_date, 'End Date') }}
+                            <p style="font-size: 12px; color: graytext;">Specify the last day of your ad campaign</p>
+                            {{ form_row(campform.end_date) }}
+                        </span>     
                     </div>
                 </div>
                 <div class="form-group">
                       <div class="col-sm-9">
-                        {{ form_row(campform.budget, { 'attr': {'class': 'form-control', 'placeholder':'IBA'} }) }}
+                        <span>
+                            {{ form_label(campform.budget, 'Budget for the Whole Period of Campaign') }}
+                            {{ form_row(campform.budget, { 'attr': {'class': 'form-control', 'placeholder':'IBA'} }) }}
+                        </span>
                       </div>
                 </div>
                 <div class="form-group">
                       <div class="col-sm-9">
+                        {{ form_label(campform.daily_budget, 'Max Budget for One Day of Campaign') }}
                         {{ form_row(campform.daily_budget, { 'attr': {'class': 'form-control', 'placeholder':'IBA'} }) }}
                       </div>
                 </div>
                 <div class="form-group">
                     <span><i class="fa fa-globe" aria-hidden="true"></i><button type="button" class="btn btn-link" data-toggle="collapse" data-target="#hide-me">
-                           Add New Site
+                           Add Your Target Website
                         </button></span><br><br>
                     <div id="hide-me" class="collapse">
                         <div class="form-group">
                             <div class="col-sm-9">
-                                {{ form_row(campform.site_name, { 'attr': {'class': 'form-control', 'placeholder':'Name of your site'} }) }}
+                                <span>
+                                    {{ form_label(campform.site_name, 'Website Name') }}
+                                    <p style="font-size: 12px; color: graytext;">Enter the name of your target website</p>
+                                    {{ form_row(campform.site_name, { 'attr': {'class': 'form-control', 'placeholder':'Name of your website'} }) }}
+                                </span>             
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-9">
-                                {{ form_row(campform.site_url, { 'attr': {'class': 'form-control', 'placeholder':'https://...'} }) }}
+                                <span>
+                                    {{ form_label(campform.site_url, 'Website URL') }}
+                                    <p style="font-size: 12px; color: graytext;">Enter the URL of your target website</p>
+                                    {{ form_row(campform.site_url, { 'attr': {'class': 'form-control', 'placeholder':'https://...'} }) }}
+                                </span>
+                                
                             </div>
                         </div>
                     </div><br><br>
@@ -90,8 +112,11 @@
 
                       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                         <div class="card-body">
-                            {{ form_label(campform.country, 'Choose Target Country') }}
-                            {{ form_row(campform.country, { 'attr': {'class': 'custom-select'}, 'label_attr': {'class': 'CUSTOM_LABEL_CLASS'} }) }}
+                            <span>
+                                {{ form_label(campform.country, 'Choose Target Country') }}
+                                <p style="font-size: 12px; color: graytext;">Please specify country where your ad will shown</p>
+                                {{ form_row(campform.country, { 'attr': {'class': 'custom-select'}, 'label_attr': {'class': 'CUSTOM_LABEL_CLASS'} }) }}
+                            </span>
                         </div>
                       </div>
                     </div>
@@ -162,7 +187,7 @@
                             <td>0,047</td>
                             <td>
                                 <div class="form-group">
-                                    {{ form_row(campform.bid, { 'attr': {'class': 'form-control', 'placeholder':'0,047 IBA'} }) }}
+                                    {{ form_row(campform.bid, { 'attr': {'class': 'form-control', 'placeholder':'0.047 IBA', 'type': 'numder', 'min': '0.047'} }) }}
                                 </div>
                             </td>
                           </tr>  
@@ -177,16 +202,17 @@
         <div class="card setup-content" id="step-4">
             <div class="card-header"><h4>Design Your Ad</h4></div>
             <div class="card-body">
+                <p>Please upload an image that will be shown to the users of mobile apps.</p>
                 <p>Important: Your ad image should fit the size 320x50</p>
                 
                 
-                        <div><img class="img-fluid" id="preview_img"></div>
+                <div><img class="img-fluid" id="preview_img"></div><br>
                         <button type="button" class="btn btn-add-photo" id="save_changes"><span id="upload-button-text">Upload Your Image</span> <i class="fa fa-file-photo-o fa-lg"></i></button>
                         <input id="image_file" accept="image/png,image/jpeg" type="file" style="display:none;">
                         <canvas style="display:none;" id="canvas"></canvas>
                             
                         {{ form_row(campform.ad_image) }}  
-                <div style="display:none;">{{ form_row(campform.submit, { 'attr': {'class': 'btn nextBtn pull-right'} }) }}</div>
+                <div style="display:none;">{{ form_row(campform.submit, { 'attr': {'class': 'btn nextBtn pull-right'} }) }}</div><br><br>
                 <button type="button" id="fake_submit" class="btn nextBtn pull-right btn">Create Ad Campaign</button>
             </div>
         </div>

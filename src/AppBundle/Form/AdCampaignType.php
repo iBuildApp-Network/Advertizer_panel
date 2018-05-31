@@ -20,16 +20,18 @@ class AdCampaignType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options){
         $builder
             /*->setMethod('POST')*/
-            ->add('name', null, array('required' => true))
-            ->add('start_date', null, array('widget' => 'single_text','required' => true))
-            ->add('end_date', null, array('widget' => 'single_text','required' => true))
-            ->add('budget', null, array('required' => true))
-            ->add('daily_budget', null, array('required' => true))
+            ->add('name', null, array('required' => true, 'label' => false))
+            ->add('start_date', null, array('widget' => 'single_text','required' => true, 'label' => false))
+            ->add('end_date', null, array('widget' => 'single_text','required' => true, 'label' => false))
+            ->add('budget', null, array('required' => true, 'label' => false))
+            ->add('daily_budget', null, array('required' => true, 'label' => false))
             ->add('site_name', TextType::class, array(
                 'required' => true,
+                'label' => false
             ))
             ->add('site_url', TextType::class, array(
                 'required' => true,
+                'label' => false
             ))
             ->add('country', CountryType::class, array(
                 'placeholder' => 'Choose an option',
@@ -81,7 +83,7 @@ class AdCampaignType extends AbstractType
                 'label' => false,
                 'required' => false,
                 ))
-            ->add('bid', null, array('required' => true))
+            ->add('bid', null, array('required' => true, 'label' => false))
             ->add('ad_image', HiddenType::class, array(
                 'required' => true,
                

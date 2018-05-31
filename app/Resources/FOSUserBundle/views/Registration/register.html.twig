@@ -1,42 +1,47 @@
 {% trans_default_domain 'FOSUserBundle' %}
 {% extends "@FOSUser/layout.html.twig" %}
-
+{% block title %}Sign Up{% endblock %}
 {% block fos_user_content %}
     <!-- BEGIN REGISTRATION FORM -->
-<form action="{{ path("fos_user_registration_register") }}" method="post" class="form-signup">
-    <h2 class="form-signup-heading" >Please Sign Up</h2>
-    <div class="form-group">
-        {{ form_widget(form.username, { 'attr': {'class': 'form-control placeholder-no-fix', 'placeholder':'User Name'} }) }}
-        {% for errorItem in form.username.vars.errors %}
-        <span class="help-inline">{{ errorItem.message | trans}}</span>
-        {% endfor %}
+<div class="card">
+    <div class="card-body" >
+        <form action="{{ path("fos_user_registration_register") }}" method="post" class="form-signup" style="max-width: 400px;">
+            <div align="center"><img src="/bundles/app/images/logo.png" alt="logo" style="width: 100px; margin: 30px;"></div>
+            <h2 class="form-signup-heading" style="margin-bottom: 30px; color: gray;" align="center">Sign Up</h2>
+            <div class="form-group">
+                {{ form_widget(form.username, { 'attr': {'class': 'form-control placeholder-no-fix', 'placeholder':'User Name'} }) }}
+                {% for errorItem in form.username.vars.errors %}
+                <span class="help-inline">{{ errorItem.message | trans}}</span>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder':'E-mail'} }) }}
+                {% for errorItem in form.email.vars.errors %}
+                <span class="help-inline">{{ errorItem.message }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control', 'placeholder':'Password'} }) }}
+                {% for errorItem in form.plainPassword.first.vars.errors %}
+                <span class="help-inline">{{ errorItem.message }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control', 'placeholder':'Repeat Password'} }) }}
+                {% for errorItem in form.plainPassword.second.vars.errors %}
+                <span class="help-inline">{{ errorItem.message }}</span>
+                {% endfor %}
+            </div>
+            <input type="submit"
+                       class="btn btn-lg btn-primary btn-block" 
+                       id="_submit"
+                       name="_submit"
+                       value="{{ 'Submit'|trans }}"/>
+            <h4 style="margin-top: 30px; color: gray">Already have an account? <a style="color: #27cadc" href="{{ path('fos_user_security_login') }}">Sign In</a></h4>
+            {{ form_rest(form) }}
+        </form>
     </div>
-    <div class="form-group">
-        {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder':'E-mail'} }) }}
-        {% for errorItem in form.email.vars.errors %}
-        <span class="help-inline">{{ errorItem.message }}</span>
-        {% endfor %}
-    </div>
-    <div class="form-group">
-        {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control', 'placeholder':'Password'} }) }}
-        {% for errorItem in form.plainPassword.first.vars.errors %}
-        <span class="help-inline">{{ errorItem.message }}</span>
-        {% endfor %}
-    </div>
-    <div class="form-group">
-        {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control', 'placeholder':'Repeat Password'} }) }}
-        {% for errorItem in form.plainPassword.second.vars.errors %}
-        <span class="help-inline">{{ errorItem.message }}</span>
-        {% endfor %}
-    </div>
-    <input type="submit"
-               class="btn btn-lg btn-primary btn-block"
-               id="_submit"
-               name="_submit"
-               value="{{ 'Submit'|trans }}"/>
-    <h4>Already have an account? <a href="{{ path('fos_user_security_login') }}">Sign In</a></h4>
-    {{ form_rest(form) }}
-</form>
+</div>
 <!-- END REGISTRATION FORM -->
    
 {% endblock fos_user_content %}
@@ -85,6 +90,18 @@
           margin-bottom: 10px;
           border-top-left-radius: 0;
           border-top-right-radius: 0;
+        }
+        .btn-block{
+            background-color: #27cadc;
+            border-color: #27cadc;
+        }
+        .btn-block:hover {
+            background-color: #31a1bd;
+            border-color: #31a1bd;
+        }
+        #_submit.btn-block:active {
+            background-color: #31a1bd;
+            border-color: #31a1bd;
         }
     </style>
 {% endblock %}
