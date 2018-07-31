@@ -1,0 +1,1312 @@
+<!-- Impressions block -->
+<!-- Impressions Trend -->
+<div class="stat-content" id="im-trend">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">Impressions > Impressions Trend</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;"><b>Impression</b>, is a term that refers to the point in which an ad is viewed once by a visitor.
+            The number of impressions of a particular advertisement is determined by the number of times the particular page is located and loaded.</p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: Impressions Trend (Days)</div>
+      <div class="card-body">
+         <canvas id="imTrendAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: Impressions Trend (Months)
+        </div>
+        <div class="card-body">
+            <canvas id="imTrendBarChart" width="100" height="48"></canvas>
+        </div>
+    </div>
+</div>
+<!-- Impressions by Country -->
+<div class="stat-content" id="im-country">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">Impressions > Impressions by Country</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;"><b>Impression</b>, is a term that refers to the point in which an ad is viewed once by a visitor.
+            The number of impressions of a particular advertisement is determined by the number of times the particular page is located and loaded.</p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: Impressions by Country (Days)</div>
+      <div class="card-body">
+         <canvas id="imCountryAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: Impressions by Country (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="imCountryBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: Countries
+                </div>
+                <div class="card-body">
+                  <canvas id="imCountryPieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!-- Impressions by OS -->
+<div class="stat-content" id="im-os">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">Impressions > Impressions by OS</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;"><b>Impression</b>, is a term that refers to the point in which an ad is viewed once by a visitor.
+            The number of impressions of a particular advertisement is determined by the number of times the particular page is located and loaded.</p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: Impressions by OS (Days)</div>
+      <div class="card-body">
+         <canvas id="imOSAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: Impressions by OS (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="imOSBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: OS
+                </div>
+                <div class="card-body">
+                  <canvas id="imOSPieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!-- Impressions by manufacturer -->
+<div class="stat-content" id="im-manufacturer">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">Impressions > Impressions by Manufacturer</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;"><b>Impression</b>, is a term that refers to the point in which an ad is viewed once by a visitor.
+            The number of impressions of a particular advertisement is determined by the number of times the particular page is located and loaded.</p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: Impressions by Manufacturer (Days)</div>
+      <div class="card-body">
+         <canvas id="imManufacturerAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: Impressions by Manufacturer (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="imManufacturerBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: Manufacturers
+                </div>
+                <div class="card-body">
+                  <canvas id="imManufacturerPieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!-- Impressions by category -->
+<div class="stat-content" id="im-category">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">Impressions > Impressions by Category</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;"><b>Impression</b>, is a term that refers to the point in which an ad is viewed once by a visitor.
+            The number of impressions of a particular advertisement is determined by the number of times the particular page is located and loaded.</p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: Impressions by Category (Days)</div>
+      <div class="card-body">
+         <canvas id="imCategoryAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: Impressions by Category (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="imCategoryBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: Categories
+                </div>
+                <div class="card-body">
+                  <canvas id="imCategoryPieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!-- Impressions by language -->
+<div class="stat-content" id="im-language">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">Impressions > Impressions by Language</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;"><b>Impression</b>, is a term that refers to the point in which an ad is viewed once by a visitor.
+            The number of impressions of a particular advertisement is determined by the number of times the particular page is located and loaded.</p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: Impressions by Language (Days)</div>
+      <div class="card-body">
+         <canvas id="imLanguageAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: Impressions by Language (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="imLanguageBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: Languages
+                </div>
+                <div class="card-body">
+                  <canvas id="imLanguagePieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!-- Clicks block -->
+<!-- Clicks Trend -->
+<div class="stat-content" id="cl-trend">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">Clicks > Clicks Trend</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;">When someone clicks your ad we count it as a <b>click</b>.
+            Clicks can help you understand how well your ad is appealing to people who see it. Relevant, highly-targeted ads are more likely to receive clicks.</p>
+        </div>  
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: Clicks Trend (Days)</div>
+      <div class="card-body">
+         <canvas id="clTrendAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: Clicks Trend (Months)
+        </div>
+        <div class="card-body">
+            <canvas id="clTrendBarChart" width="100" height="20"></canvas>
+        </div>
+    </div>
+</div>
+<!-- Clicks by Country -->
+<div class="stat-content" id="cl-country">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">Clicks > Clicks by Country</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;">When someone clicks your ad we count it as a <b>click</b>.
+            Clicks can help you understand how well your ad is appealing to people who see it. Relevant, highly-targeted ads are more likely to receive clicks.</p>
+        </div>  
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: Clicks by Country (Days)</div>
+      <div class="card-body">
+         <canvas id="clCountryAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: Clicks by Country (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="clCountryBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: Countries
+                </div>
+                <div class="card-body">
+                  <canvas id="clCountryPieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!-- Clicks by OS -->
+<div class="stat-content" id="cl-os">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">Clicks > Clicks by OS</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;">When someone clicks your ad we count it as a <b>click</b>.
+            Clicks can help you understand how well your ad is appealing to people who see it. Relevant, highly-targeted ads are more likely to receive clicks.</p>
+        </div>  
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: Clicks by OS (Days)</div>
+      <div class="card-body">
+         <canvas id="clOSAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: Clicks by OS (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="clOSBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: OS
+                </div>
+                <div class="card-body">
+                  <canvas id="clOSPieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!-- Clicks by manufacturer -->
+<div class="stat-content" id="cl-manufacturer">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">Clicks > Clicks by Manufacturer</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;">When someone clicks your ad we count it as a <b>click</b>.
+            Clicks can help you understand how well your ad is appealing to people who see it. Relevant, highly-targeted ads are more likely to receive clicks.</p>
+        </div>  
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: Clicks by Manufacturer (Days)</div>
+      <div class="card-body">
+         <canvas id="clManufacturerAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: Clicks by Manufacturer (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="clManufacturerBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: Manufacturers
+                </div>
+                <div class="card-body">
+                  <canvas id="clManufacturerPieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!-- Clicks by category -->
+<div class="stat-content" id="cl-category">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">Clicks > Clicks by Category</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;">When someone clicks your ad we count it as a <b>click</b>.
+            Clicks can help you understand how well your ad is appealing to people who see it. Relevant, highly-targeted ads are more likely to receive clicks.</p>
+        </div>  
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: Clicks by Category (Days)</div>
+      <div class="card-body">
+         <canvas id="clCategoryAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: Clicks by Category (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="clCategoryBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: Categories
+                </div>
+                <div class="card-body">
+                  <canvas id="clCategoryPieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!-- Clicks by language -->
+<div class="stat-content" id="cl-language">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">Clicks > Clicks by Language</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;">When someone clicks your ad we count it as a <b>click</b>.
+            Clicks can help you understand how well your ad is appealing to people who see it. Relevant, highly-targeted ads are more likely to receive clicks.</p>
+        </div>  
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: Clicks by Language (Days)</div>
+      <div class="card-body">
+         <canvas id="clLanguageAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: Clicks by Language (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="clLanguageBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: Languages
+                </div>
+                <div class="card-body">
+                  <canvas id="clLanguagePieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!-- CTR block -->
+<!-- CTR Trend -->
+<div class="stat-content" id="ctr-trend">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">CTR > CTR Trend</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;"><b>Click-through rate (CTR)</b> is the ratio of users who click on your ad to the number of total users who view it. 
+            It is commonly used to measure the success of an online advertising campaign. </p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: CTR Trend (Days)</div>
+      <div class="card-body">
+         <canvas id="ctrTrendAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: CTR Trend (Months)
+        </div>
+        <div class="card-body">
+            <canvas id="ctrTrendBarChart" width="100" height="20"></canvas>
+        </div>
+    </div>
+</div>
+<!-- CTR by Country -->
+<div class="stat-content" id="ctr-country">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">CTR > CTR by Country</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;"><b>Click-through rate (CTR)</b> is the ratio of users who click on your ad to the number of total users who view it. 
+            It is commonly used to measure the success of an online advertising campaign. </p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: CTR by Country (Days)</div>
+      <div class="card-body">
+         <canvas id="ctrCountryAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: CTR by Country (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="ctrCountryBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: Countries
+                </div>
+                <div class="card-body">
+                  <canvas id="ctrCountryPieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!-- CTR by OS -->
+<div class="stat-content" id="ctr-os">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">CTR > CTR by OS</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;"><b>Click-through rate (CTR)</b> is the ratio of users who click on your ad to the number of total users who view it. 
+            It is commonly used to measure the success of an online advertising campaign. </p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: CTR by OS (Days)</div>
+      <div class="card-body">
+         <canvas id="ctrOSAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: CTR by OS (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="ctrOSBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: OS
+                </div>
+                <div class="card-body">
+                  <canvas id="ctrOSPieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!-- CTR by manufacturer -->
+<div class="stat-content" id="ctr-manufacturer">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">CTR > CTR by Manufacturer</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;"><b>Click-through rate (CTR)</b> is the ratio of users who click on your ad to the number of total users who view it. 
+            It is commonly used to measure the success of an online advertising campaign. </p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: CTR by Manufacturer (Days)</div>
+      <div class="card-body">
+         <canvas id="ctrManufacturerAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: CTR by Manufacturer (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="ctrManufacturerBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: Manufacturers
+                </div>
+                <div class="card-body">
+                  <canvas id="ctrManufacturerPieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!-- CTR by category -->
+<div class="stat-content" id="ctr-category">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">CTR > CTR by Category</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+       <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;"><b>Click-through rate (CTR)</b> is the ratio of users who click on your ad to the number of total users who view it. 
+            It is commonly used to measure the success of an online advertising campaign. </p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: CTR by Category (Days)</div>
+      <div class="card-body">
+         <canvas id="ctrCategoryAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: CTR by Category (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="ctrCategoryBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: Categories
+                </div>
+                <div class="card-body">
+                  <canvas id="ctrCategoryPieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!-- CTR by language -->
+<div class="stat-content" id="ctr-language">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">CTR > CTR by Language</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;"><b>Click-through rate (CTR)</b> is the ratio of users who click on your ad to the number of total users who view it. 
+            It is commonly used to measure the success of an online advertising campaign. </p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: CTR by Language (Days)</div>
+      <div class="card-body">
+         <canvas id="ctrLanguageAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: CTR by Language (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="ctrLanguageBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: Languages
+                </div>
+                <div class="card-body">
+                  <canvas id="ctrLanguagePieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!-- CPC block -->
+<!-- CPC Trend -->
+<div class="stat-content" id="cpc-trend">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">CPC > CPC Trend</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;"><b> Cost-per-click (CPC)</b> is the measurement of cost on a per-click basis for campaigns not based on click-throughs.
+            Charts in this section show you how changed the cost for one click on your ad during campaign period. </p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: CPC Trend (Days)</div>
+      <div class="card-body">
+         <canvas id="cpcTrendAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: CPC Trend (Months)
+        </div>
+        <div class="card-body">
+            <canvas id="cpcTrendBarChart" width="100" height="20"></canvas>
+        </div>
+    </div>
+</div>
+       
+        
+<!-- Spend block -->
+<!-- Spend Trend -->
+<div class="stat-content" id="spn-trend">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">Spend > Spend Trend</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;">Charts in this section show you how much tokens were spent during the period of your ad campaign.
+                You may check how much you spent on each category, OS or country.</p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: Spend Trend (Days)</div>
+      <div class="card-body">
+         <canvas id="spnTrendAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: Spend Trend (Months)
+        </div>
+        <div class="card-body">
+            <canvas id="spnTrendBarChart" width="100" height="20"></canvas>
+        </div>
+    </div>
+</div>
+<!-- Spend by Country -->
+<div class="stat-content" id="spn-country">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">Spend > Spend by Country</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;">Charts in this section show you how much tokens were spent during the period of your ad campaign.
+                You may check how much you spent on each category, OS or country.</p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: Spend by Country (Days)</div>
+      <div class="card-body">
+         <canvas id="spnCountryAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: Spend by Country (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="spnCountryBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: Countries
+                </div>
+                <div class="card-body">
+                  <canvas id="spnCountryPieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!-- Spend by OS -->
+<div class="stat-content" id="spn-os">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">Spend > Spend by OS</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;">Charts in this section show you how much tokens were spent during the period of your ad campaign.
+                You may check how much you spent on each category, OS or country.</p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: Spend by OS (Days)</div>
+      <div class="card-body">
+         <canvas id="spnOSAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: Spend by OS (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="spnOSBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: OS
+                </div>
+                <div class="card-body">
+                  <canvas id="spnOSPieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!-- Spend by manufacturer -->
+<div class="stat-content" id="spn-manufacturer">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">Spend > Spend by Manufacturer</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;">Charts in this section show you how much tokens were spent during the period of your ad campaign.
+                You may check how much you spent on each category, OS or country.</p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: Spend by Manufacturer (Days)</div>
+      <div class="card-body">
+         <canvas id="spnManufacturerAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: Spend by Manufacturer (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="spnManufacturerBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: Manufacturers
+                </div>
+                <div class="card-body">
+                  <canvas id="spnManufacturerPieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!-- Spend by category -->
+<div class="stat-content" id="spn-category">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">Spend > Spend by Category</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;">Charts in this section show you how much tokens were spent during the period of your ad campaign.
+                You may check how much you spent on each category, OS or country.</p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: Spend by Category (Days)</div>
+      <div class="card-body">
+         <canvas id="spnCategoryAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: Spend by Category (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="spnCategoryBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: Categories
+                </div>
+                <div class="card-body">
+                  <canvas id="spnCategoryPieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!-- Spend by language -->
+<div class="stat-content" id="spn-language">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">Spend > Spend by Language</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;">Charts in this section show you how much tokens were spent during the period of your ad campaign.
+                You may check how much you spent on each category, OS or country.</p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: Spend by Language (Days)</div>
+      <div class="card-body">
+         <canvas id="spnLanguageAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: Spend by Language (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="spnLanguageBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: Languages
+                </div>
+                <div class="card-body">
+                  <canvas id="spnLanguagePieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!-- CVR block -->
+<!-- CVR Trend -->
+<div class="stat-content" id="cvr-trend">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">CVR > CVR Trend</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;"><b>Conversion rate (CVR)</b> is the measure of what proportion of people are persuaded by advertising to take a particular action, such as clicking on a link or making a purchase.
+            </p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: CVR Trend (Days)</div>
+      <div class="card-body">
+         <canvas id="cvrTrendAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: CVR Trend (Months)
+        </div>
+        <div class="card-body">
+            <canvas id="cvrTrendBarChart" width="100" height="20"></canvas>
+        </div>
+    </div>
+</div>
+<!-- CVR by Country -->
+<div class="stat-content" id="cvr-country">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">CVR > CVR by Country</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;"><b>Conversion rate (CVR)</b> is the measure of what proportion of people are persuaded by advertising to take a particular action, such as clicking on a link or making a purchase.
+            </p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: CVR by Country (Days)</div>
+      <div class="card-body">
+         <canvas id="cvrCountryAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: CVR by Country (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="cvrCountryBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: Countries
+                </div>
+                <div class="card-body">
+                  <canvas id="cvrCountryPieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!-- CVR by OS -->
+<div class="stat-content" id="cvr-os">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">CVR > CVR by OS</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;"><b>Conversion rate (CVR)</b> is the measure of what proportion of people are persuaded by advertising to take a particular action, such as clicking on a link or making a purchase.
+            </p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: CVR by OS (Days)</div>
+      <div class="card-body">
+         <canvas id="cvrOSAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: CVR by OS (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="cvrOSBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: OS
+                </div>
+                <div class="card-body">
+                  <canvas id="cvrOSPieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!-- CVR by manufacturer -->
+<div class="stat-content" id="cvr-manufacturer">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">CVR > CVR by Manufacturer</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;"><b>Conversion rate (CVR)</b> is the measure of what proportion of people are persuaded by advertising to take a particular action, such as clicking on a link or making a purchase.
+            </p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: CVR by Manufacturer (Days)</div>
+      <div class="card-body">
+         <canvas id="cvrManufacturerAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: CVR by Manufacturer (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="cvrManufacturerBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: Manufacturers
+                </div>
+                <div class="card-body">
+                  <canvas id="cvrManufacturerPieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!-- CVR by category -->
+<div class="stat-content" id="cvr-category">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">CVR > CVR by Category</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;"><b>Conversion rate (CVR)</b> is the measure of what proportion of people are persuaded by advertising to take a particular action, such as clicking on a link or making a purchase.
+            </p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: CVR by Category (Days)</div>
+      <div class="card-body">
+         <canvas id="cvrCategoryAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: CVR by Category (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="cvrCategoryBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: Categories
+                </div>
+                <div class="card-body">
+                  <canvas id="cvrCategoryPieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+<!-- CVR by language -->
+<div class="stat-content" id="cvr-language">
+    <div style="margin-bottom: 30px;">
+        <h2 style="color: grey; font-size: 16px;">CVR > CVR by Language</h2>
+    </div>
+    <div class="card" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px;">
+        <div class="card-body">
+            <div class="card-body-icon">
+                <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+            </div>
+            <p style="font-weight: 8px; margin: 10px;"><b>Conversion rate (CVR)</b> is the measure of what proportion of people are persuaded by advertising to take a particular action, such as clicking on a link or making a purchase.
+            </p>
+        </div>
+    </div>
+    <div class="card mb-3">
+      <div class="card-header">
+         <i class="fa fa-area-chart"></i>  <b>{{ camp.name }}</b>: CVR by Language (Days)</div>
+      <div class="card-body">
+         <canvas id="cvrLanguageAreaChart" width="100%" height="30%"></canvas>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-bar-chart"></i>  <b>{{ camp.name }}</b>: CVR by Language (Months)
+                </div>
+                <div class="card-body">
+                    <canvas id="cvrLanguageBarChart" width="100" height="48"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fa fa-pie-chart"></i> <b>{{ camp.name }}</b>: Languages
+                </div>
+                <div class="card-body">
+                  <canvas id="cvrLanguagePieChart" width="100%" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

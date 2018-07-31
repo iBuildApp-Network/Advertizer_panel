@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -23,22 +24,24 @@ class AdCampaign
     private $name;
     
     /**
+     * @Assert\GreaterThan("today UTC")
      * @ORM\Column(type="date", length=100)
      */
     private $start_date;
     
     /**
+     * 
      * @ORM\Column(type="date", length=100)
      */
     private $end_date;
 
     /**
-     * @ORM\Column(type="decimal", scale=2)
+     * @ORM\Column(type="decimal", scale=3)
      */
     private $budget;
     
     /**
-     * @ORM\Column(type="decimal", scale=2)
+     * @ORM\Column(type="decimal", scale=3)
      */
     private $daily_budget;
     
@@ -48,6 +51,7 @@ class AdCampaign
     private $site_name;
     
     /**
+     * @Assert\Url()
      * @ORM\Column(type="string", length=100)
      */
     private $site_url;

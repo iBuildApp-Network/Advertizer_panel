@@ -1,0 +1,33 @@
+{% extends "::base.html.twig" %}
+{% block title %}Balance{% endblock %}
+{% block body %}
+    
+{% include "topnav.html.twig" %}
+<div class="content-wrapper" style="padding: 50px; padding-top: 80px;">
+    <div class="container">
+        <div style="margin-bottom: 30px;">
+            <h2 style="color: grey;">Balance</h2>
+        </div>
+        <div class="row">
+           <div class="col-sm-6">
+             <div style="padding-bottom: 10px;">
+                 <h6>{{ 'Your Ethereum Address'|trans }}:</h6>
+             </div>
+             <div class="card" style="background-color: azure;">
+                 <p style="margin: 5px;"> {{ user.ethereumAddress }}</p>
+             </div>
+             <div style="padding-bottom: 10px;padding-top: 20px;">
+                 <h6>Balance (IBA Tokens):</h6>
+             </div>
+             <div>
+                 <p>0 IBA</p>
+             </div><br>
+             <div class="card" style="background-color: #F5F5F5;display: inline-block;">
+                 <p style="font-weight: 8px; margin: 10px;">You will be able to increase number of your IBA tokens on this page soon.<br><br>You may change Ethereum address in your <a style="display: inline;" href="{{ path('fos_user_profile_show') }}">account settings</a>.</p>
+             </div> 
+          </div>
+        </div>
+    </div>
+</div>
+{% include "footer.html.twig" %}
+{% endblock body %}

@@ -6,18 +6,24 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-        <li class="nav-item {{ app.request.get('_route') == 'mycampaigns' ? 'active' }}" data-toggle="tooltip" data-placement="right" style="padding-top: 20px;">
+        <li class="nav-item {{ app.request.get('_route') == 'mycampaigns' ? 'active' }}" data-toggle="tooltip" data-placement="right" style="padding-top: 10px;">
           <a class="nav-link" href="{{ path('mycampaigns') }}">
             <i class="fa fa-fw fa-clipboard"></i>
             <span class="nav-link-text">My Campaigns</span>
           </a>
         </li>
-        <li class="nav-item {{ app.request.get('_route') == 'adcampaign_new' ? 'active' }}" data-toggle="tooltip" data-placement="right" style="padding-top: 20px;">
+        <li class="nav-item {{ app.request.get('_route') == 'adcampaign_new' ? 'active' }}" data-toggle="tooltip" data-placement="right" style="padding-top: 10px;">
           <a class="nav-link" href="{{ path('adcampaign_new') }}">
             <i class="fa fa-fw fa-plus-circle"></i>
             <span class="nav-link-text">New Ad Campaign</span>
           </a>
-        </li>
+        </li> 
+        <li class="nav-item {{ app.request.get('_route') == 'balance' ? 'active' }}" data-toggle="tooltip" data-placement="right" style="padding-top: 10px;">
+          <a class="nav-link" href="{{ path('balance') }}">
+            <i class="fa fa-fw fa-money"></i>
+            <span class="nav-link-text">Balance</span>
+          </a>
+        </li> 
       </ul>
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">

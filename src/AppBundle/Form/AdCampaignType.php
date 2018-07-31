@@ -19,7 +19,6 @@ class AdCampaignType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options){
         $builder
-            /*->setMethod('POST')*/
             ->add('name', null, array('required' => true, 'label' => false))
             ->add('start_date', null, array('widget' => 'single_text','required' => true, 'label' => false))
             ->add('end_date', null, array('widget' => 'single_text','required' => true, 'label' => false))

@@ -6,13 +6,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\AdCampaign;
-use AppBundle\Form\AdCampaignType;
-use AppBundle\Entity\Task;
 use AppBundle\Entity\User;
-use FOS\UserBundle\Model\UserManagerInterface;
-use Symfony\Component\HttpFoundation\Session\Session;
-use Symfony\Component\Security\Core\Security;
-use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
+use Symfony\Component\Security\Core\Validator\Constraints\UserPassword;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 
 class DefaultController extends Controller
@@ -42,6 +38,34 @@ class DefaultController extends Controller
         );
         
         return $this->render('mycampaigns.html.twig', array('vcamp' => $mycamps));
+    }
+    
+    /**
+     * 
+     * @Route("/balance", name="balance")
+     */
+    public function showAction()
+    {
+       $user = $this->getUser();
+
+        return $this->render('Tools/advertiser_panel.html.twig', array('user' => $user));
+    }
+    
+    /**
+     * 
+     * @Route("/{id}/stats", name="stats")
+     */
+    public function statsAction(AdCampaign $adCampaign)
+    {
+        $this->denyAccessUnlessGranted('ROLE_USER', null, 'Unable to access this page!');
+        
+        $repository = $this->getDoctrine()->getRepository(AdCampaign::class);
+        
+        $camp = $repository->findOneBy(
+            array('id' => $adCampaign->getId())
+        );
+        
+        return $this->render('Tools/campaign_stats.html.twig', array('camp' => $camp));
     }
  
 }

@@ -5,7 +5,7 @@
 {% include "topnav.html.twig" %}
 
 <div class="content-wrapper" style="padding: 50px; padding-top: 80px;">
-    <div class="container" style="">
+    <div class="container">
         <div style="margin-bottom: 30px;">
             <h2 style="color: grey;">My Campaigns</h2>
         </div>
@@ -29,6 +29,10 @@
                           </div>
                         </div>
                         <div style="margin-top: 40px;" class="col-sm-8" align="center">
+                              <span valign="middle">
+                                <a  class="btn btn-lg btedit" href="{{ path('stats', { 'id': key.id }) }}">
+                                    <i class="fa fa-bar-chart" aria-hidden="true"></i> Stats</a>
+                              </span>
                               <span valign="middle">
                                 <a  class="btn btn-lg btedit" href="{{ path('adcampaign_edit', { 'id': key.id }) }}" >
                                     <i class="fa fa-edit" aria-hidden="true"></i> Edit Campaign</a>

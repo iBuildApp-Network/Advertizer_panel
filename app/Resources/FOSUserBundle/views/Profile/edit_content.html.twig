@@ -1,8 +1,45 @@
 {% trans_default_domain 'FOSUserBundle' %}
-
-{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+<div class="content-wrapper fos_user_user_show" style="padding: 50px; padding-top: 80px;">
+    {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+    <div class="container">
+        <div style="margin-bottom: 30px;">
+            <h2 style="color: grey;">Edit Profile Settings</h2>
+        </div>
+        <div class="row">
+           <div class="col-sm-6">
+                <div>
+                    {{ form_row(form.username, { 'attr': {'class': 'form-control'} }) }}
+                </div>
+                <div>
+                    {{ form_row(form.email, { 'attr': {'class': 'form-control'} }) }}
+                </div>
+                <div>
+                    {{ form_row(form.current_password, { 'attr': {'class': 'form-control'} }) }}
+                </div>
+                <div>
+                    {{ form_row(form.ethereum_address, { 'attr': {'class': 'form-control'} }) }}
+                </div>
+                <div>
+                    <input class="btn btupd" type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+                </div>
+                {{ form_end(form) }}
+           </div>
+        </div>
     </div>
-{{ form_end(form) }}
+</div>
+{% include "footer.html.twig" %}
+{% block stylysheets %}
+    <style>
+        .btupd{
+            color: #fff;
+            background-color: #27cadc;
+            border-color: #27cadc;
+        }
+        .btupd:hover {
+            color: #fff;
+            background-color: #31a1bd;
+            border-color: #31a1bd;
+        }
+    </style>
+{% endblock stylysheets %}

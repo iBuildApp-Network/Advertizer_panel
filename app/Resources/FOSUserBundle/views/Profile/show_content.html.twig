@@ -1,18 +1,33 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-<div class="content-wrapper fos_user_user_show" style="margin-top: 100px; margin-left: 300px;">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title" style="margin-bottom: 50px;">Account settings</h5>
-        <div>
-            <h6 style="display: inline !important;">{{ 'Username'|trans }}:</h6>
-            <p style="display: inline !important;"> {{ user.username }}</p>
-        </div>    
-        <div>
-            <h6 style="display: inline !important;">{{ 'Email'|trans }}:</h6>
-            <p style="display: inline !important;"> {{ user.email }}</p>
+<div class="content-wrapper fos_user_user_show" style="padding: 50px; padding-top: 80px;">
+    <div class="container">
+        <div style="margin-bottom: 30px;">
+            <h2 style="color: grey;">Account Settings</h2>
         </div>
-      </div>
+        <div class="row">
+            <div class="col-sm-6"> 
+                <div style="margin-bottom: 10px;">
+                    <h6 style="display: inline !important;">{{ 'Username'|trans }}:</h6>
+                    <p style="display: inline !important;"> {{ user.username }}</p>
+                </div>    
+                <div style="margin-bottom: 10px;">
+                    <h6 style="display: inline !important;">{{ 'Email'|trans }}:</h6>
+                    <p style="display: inline !important;"> {{ user.email }}</p>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <h6 style="display: inline !important;">{{ 'Ethereum Address'|trans }}:</h6>
+                    <p style="display: inline !important;"> {{ user.ethereumAddress }}</p><br><br>
+                    <div class="card" style="background-color: #F5F5F5;">
+                        <p style="font-weight: 8px; padding: 10px;">Please Note:<br> This ethereum address will be used to write-off IBA tokens for your ad campaign. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <a style="color: #27cadc" href="{{ path('fos_user_profile_edit') }}">Edit Settings</a><br>
+               <a style="color: #27cadc" href="{{ path('fos_user_change_password') }}">Change Password</a> 
+            </div>
+        </div>
     </div>
 </div>
 {% include "footer.html.twig" %}

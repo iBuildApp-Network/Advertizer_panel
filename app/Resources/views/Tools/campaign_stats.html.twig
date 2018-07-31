@@ -1,0 +1,212 @@
+{% extends "::base.html.twig" %}
+{% block title %}Campaign Statistics{% endblock %}
+{% block body %}
+    
+{% include "topnav.html.twig" %}
+
+<div class="content-wrapper" style="padding: 50px; padding-top: 80px;">
+    <div class="container">
+        <div style="margin-bottom: 30px;">
+            <h2 style="color: grey;">{{ camp.name }}: Campaign Statistics</h2>
+        </div>
+        <div class="btn-group stat-panel" role="group" aria-label="Button group with nested dropdown" style="padding-bottom: 30px;">
+            <div class="btn-group" role="group">
+              <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Impressions
+              </button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <a class="dropdown-item" href="#im-trend">Impressions Trend</a>
+                <a class="dropdown-item" href="#im-country">Impressions by Country</a>
+                <a class="dropdown-item" href="#im-os">Impressions by OS</a>
+                <a class="dropdown-item" href="#im-manufacturer">Impressions by Manufacturer</a>
+                <a class="dropdown-item" href="#im-category">Impressions by Category</a>
+                <a class="dropdown-item" href="#im-language">Impressions by Language</a>
+              </div>
+            </div>
+            <div class="btn-group" role="group">
+              <button id="btnGroupDrop2" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Clicks
+              </button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop2">
+                <a class="dropdown-item" href="#cl-trend">Clicks Trend</a>
+                <a class="dropdown-item" href="#cl-country">Clicks by Country</a>
+                <a class="dropdown-item" href="#cl-os">Clicks by OS</a>
+                <a class="dropdown-item" href="#cl-manufacturer">Clicks by Manufacturer</a>
+                <a class="dropdown-item" href="#cl-category">Clicks by Category</a>
+                <a class="dropdown-item" href="#cl-language">Clicks by Language</a>
+              </div>
+            </div>
+            <div class="btn-group" role="group">
+              <button id="btnGroupDrop3" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                CTR
+              </button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop3">
+                <a class="dropdown-item" href="#ctr-trend">CTR Trend</a>
+                <a class="dropdown-item" href="#ctr-country">CTR by Country</a>
+                <a class="dropdown-item" href="#ctr-os">CTR by OS</a>
+                <a class="dropdown-item" href="#ctr-manufacturer">CTR by Manufacturer</a>
+                <a class="dropdown-item" href="#ctr-category">CTR by Category</a>
+                <a class="dropdown-item" href="#ctr-language">CTR by Language</a>
+              </div>
+            </div>
+            <div class="btn-group" role="group">
+              <button id="btnGroupDrop4" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                CPC
+              </button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop4">
+                <a class="dropdown-item" href="#cpc-trend">CPC Trend</a>
+              </div>
+            </div>
+            <div class="btn-group" role="group">
+              <button id="btnGroupDrop5" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Spend
+              </button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop5">
+                <a class="dropdown-item" href="#spn-trend">Spend Trend</a>
+                <a class="dropdown-item" href="#spn-country">Spend by Country</a>
+                <a class="dropdown-item" href="#spn-os">Spend by OS</a>
+                <a class="dropdown-item" href="#spn-manufacturer">Spend by Manufacturer</a>
+                <a class="dropdown-item" href="#spn-category">Spend by Category</a>
+                <a class="dropdown-item" href="#spn-language">Spend by Language</a>
+              </div>
+            </div>
+            <div class="btn-group" role="group">
+              <button id="btnGroupDrop6" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                CVR
+              </button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop6">
+                <a class="dropdown-item" href="#cvr-trend">CVR Trend</a>
+                <a class="dropdown-item" href="#cvr-country">CVR by Country</a>
+                <a class="dropdown-item" href="#cvr-os">CVR by OS</a>
+                <a class="dropdown-item" href="#cvr-manufacturer">CVR by Manufacturer</a>
+                <a class="dropdown-item" href="#cvr-category">CVR by Category</a>
+                <a class="dropdown-item" href="#cvr-language">CVR by Language</a>
+              </div>
+            </div>
+        </div>
+        
+        <div class="card stat-info" style="background-color: #F5F5F5; display: inline-block; margin-bottom: 30px; max-width: 552px;">
+            <div class="card-body">
+                <div class="card-body-icon">
+                    <i class="fa fa-fw fa-question" style="color: #e8e6e4;"></i>
+                </div>
+                <p style="font-weight: 8px; margin: 10px;">In this section you may check all statistics of your ad campaign.<br><br>
+                    <b>Please note:</b> some statistic is available only if you specified appropriate parameters of targeting.</p>
+            </div>  
+        </div>
+        
+    {% include "Tools/charts_stats.html.twig" %}    
+              
+    </div>
+</div>
+<!-- /.container-fluid-->
+<!-- /.content-wrapper-->
+    </div>  
+{% include "footer.html.twig" %}
+
+{% block stylysheets %}
+    <style>
+        .btn-secondary {
+            color: #6c757d !important;
+            background-color: transparent !important;
+            border-color: #6c757d;
+            border-top-color: transparent !important;
+            border-bottom-color: transparent !important;
+            padding: .375rem .95rem;
+            border-radius: 0;
+        }
+        
+        .btn-success {
+            display: block !important;
+            width: 100% !important;
+            padding: .25rem 1.5rem !important;
+            clear: both !important;
+            font-weight: 400 !important;
+            color: #fff !important;
+            text-align: inherit !important;
+            white-space: nowrap !important;
+            background-color: #31a1bd !important;
+            border: 0 !important;
+        }
+        
+        .btn-default {
+            display: block !important;
+            width: 100% !important;
+            padding: .25rem 1.5rem !important;
+            clear: both !important;
+            font-weight: 400 !important;
+            color: #212529 !important;
+            text-align: inherit !important;
+            white-space: nowrap !important;
+            background-color: transparent !important;
+            border: 0 !important;
+            background-image: none !important;
+            text-shadow: none !important;
+            box-shadow: none !important;
+        }
+        
+        .dropdown-item:hover {
+            color: #fff;
+            background-color: #27cadc;
+            border-color: #27cadc;
+        }
+        
+        .btn-success:hover {
+            color: #fff !important;
+            background-color: #27cadc !important;
+            border-color: #27cadc !important;
+        }
+    </style>
+{% endblock stylysheets %}
+
+ {% block javascripts %}
+        {{ parent() }}
+        <script src="{{ asset('bundles/app/chart.js/Chart.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/datatables/jquery.dataTables.js') }}"></script>
+        <script src="{{ asset('bundles/app/datatables/dataTables.bootstrap4.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/custom-charts.js') }}"></script>
+        <script type="text/javascript">
+        $(document).ready(function () {
+
+        var navListItems = $('div.stat-panel div a'),
+            allWells = $('.stat-content'),
+            allNextBtn = $('.nextBtn');
+            infoCard = $('.stat-info');
+            
+        allWells.hide();
+
+        navListItems.click(function (e) {
+            infoCard.hide();
+            e.preventDefault();
+            var $target = $($(this).attr('href')),
+                $item = $(this);
+
+            if (!$item.hasClass('disabled')) {
+                navListItems.removeClass('btn-success');
+                $item.addClass('btn-success');
+                allWells.hide();
+                $target.show();
+                $target.find('input:eq(0)').focus();
+            }
+        });
+
+        $('div.stat-panel div a.btn-success').trigger('click');
+        });
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#prev')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+      </script>
+    {% endblock javascripts %}
+  
+{% endblock body %}
+
+
